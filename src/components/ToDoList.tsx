@@ -16,10 +16,11 @@ export function ToDoList(props: listProps){
 
     return (
         <>
-            {filteredList.map((todo, index) => {
+            {filteredList.map((todo, tempIndex) => {
+                const index = todos.findIndex(val => val.input==todo.input)
                 const cardProps = {todo, index, deleteTodo, completeTodo}
                 return(
-                    <ToDoCard key={index} {...cardProps}/>
+                    <ToDoCard key={tempIndex} {...cardProps}/>
                 )
             })}
         </>
