@@ -40,7 +40,7 @@ function App() {
   }
 
   useEffect(() => {
-    if (!localStorage || localStorage.getItem('todo-app')) return
+    if (!localStorage || !localStorage.getItem('todo-app')) return
     const data = localStorage.getItem('todo-app')
     const db = JSON.parse(data!)
     setTodos(db.todos)
